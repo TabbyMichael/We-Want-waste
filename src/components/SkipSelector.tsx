@@ -84,16 +84,15 @@ const SkipSelector: React.FC<SkipSelectorProps> = ({ setIsLoading }) => {
             </div>
             
             {/* Details */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center">
-              <h3 className="text-4xl font-semibold mb-3 text-gray-900 dark:text-white">{selectedSkip.size}</h3>
-              <p className="text-3xl font-bold text-amber-600 dark:text-amber-400 mb-2">
+            <div className="w-full md:w-2/3 flex flex-col justify-center px-2 md:px-8">
+              <h3 className="text-7xl font-extrabold mb-6 text-gray-900 dark:text-white leading-tight">{selectedSkip.size}</h3>
+              <p className="text-4xl font-bold text-amber-500 dark:text-amber-400 mb-4">
                 £{selectedSkip.price}
               </p>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
+              <p className="text-2xl text-gray-700 dark:text-gray-300 mb-8">
                 {selectedSkip.hire_period}
               </p>
-              
-              <p className="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-slate-700 p-3 rounded-md">
+              <p className="text-base text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-slate-700 p-4 rounded-md max-w-xl">
                 Imagery and information shown throughout this website may not reflect the exact shape or size specification, colours may vary, options and/or accessories may be featured at additional cost.
               </p>
             </div>
