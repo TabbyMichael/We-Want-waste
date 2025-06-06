@@ -3,12 +3,12 @@
 ## Live Demo
 
 You can view the deployed version of the redesigned page here:
-**[Netlify Deploy Link]** (e.g., `https://wewant-waste.netlify.app/`)
+**[Netlify Deploy Link]** [`https://wewant-waste.netlify.app/`]
 
 ## Sandbox Environment
 
 To inspect the code directly and see the development environment, you can access the CodeSandbox project here:
-**[CodeSandbox Link]** (e.g., `https://codesandbox.io/p/github/TabbyMichael/We-Want-waste/We-Want-Waste-1.0.0?workspaceId=ws_Cr4TCY2SKeQCsoHRxPGwhT`)
+**[CodeSandbox Link]** [`https://codesandbox.io/p/github/TabbyMichael/We-Want-waste/We-Want-Waste-1.0.0?workspaceId=ws_Cr4TCY2SKeQCsoHRxPGwhT`]
 
 ## Project Overview
 
