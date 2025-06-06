@@ -21,11 +21,6 @@ A comprehensive redesign and enhancement of the We Want Waste skip hire platform
 ### Dark Mode
 ![Dark Mode](public/assets/Dark%20mode.png)
 
-### Waste Type Selection
-![Waste Type Selection](src/assets/waste-type-selection.png)
-
-### Permit Check
-![Permit Check](src/assets/permit-check.png)
 
 ## 1. Project Structure
 
