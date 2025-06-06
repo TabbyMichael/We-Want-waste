@@ -16,10 +16,10 @@ A comprehensive redesign and enhancement of the We Want Waste skip hire platform
 **Screenshots:**
 
 **Waste Type Selection**
-![Waste Type Selection](./public/assets/waste-type-selection.png)
+![./public/assets/waste-type-selection.png]
 
 **Permit Check**
-![Permit Check](./public/assets/permit-check.png)
+[!./public/assets/permit-check.png]
 
 ## 1. Project Structure
 
