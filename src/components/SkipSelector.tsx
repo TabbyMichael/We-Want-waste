@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import SkipCard from './SkipCard';
 import ProgressBar from './ProgressBar';
 import { Skip } from '../types'; // Import Skip type
@@ -10,6 +11,7 @@ interface SkipSelectorProps {
 }
 
 const SkipSelector: React.FC<SkipSelectorProps> = ({ setIsLoading }) => {
+  const navigate = useNavigate(); // Initialize useNavigate
   const [showSummaryView, setShowSummaryView] = useState<boolean>(false);
   const { skips, loading, error } = useSkips();
   const [selectedSkip, setSelectedSkip] = useState<Skip | null>(null);
@@ -19,32 +21,28 @@ const SkipSelector: React.FC<SkipSelectorProps> = ({ setIsLoading }) => {
     setIsLoading(loading);
   }, [loading, setIsLoading]);
 
-  // Load selected skip from localStorage on component mount
-  useEffect(() => {
-    const savedSkipId = localStorage.getItem('selectedSkip');
-    if (savedSkipId && skips.length > 0) { 
-      const skip = skips.find((s) => s.id === Number(savedSkipId));
-      if (skip) {
-        setSelectedSkip(skip);
-        // Optional: If you want to directly go to summary view if a skip was previously selected and persisted
-        // setShowSummaryView(true); 
-      }
-    }
-  }, [skips]);
-
-  // Save selected skip to localStorage when it changes
+  // Save selected skip to localStorage when it changes, or clear it if deselected
   useEffect(() => {
     if (selectedSkip) {
       localStorage.setItem('selectedSkip', selectedSkip.id.toString());
+    } else {
+      localStorage.removeItem('selectedSkip');
     }
   }, [selectedSkip]);
 
   const handleSelectSkip = (skip: Skip) => {
     setIsLoading(true);
-    // Simulate loading for 500ms, or replace with real async logic if needed
+    // Simulate loading for 500ms
     setTimeout(() => {
-      setSelectedSkip(skip);
-      setShowSummaryView(true);
+      if (selectedSkip && selectedSkip.id === skip.id) {
+        // If the clicked skip is already selected, deselect it
+        setSelectedSkip(null);
+        setShowSummaryView(false); // Ensure we are in grid view if a skip is deselected
+      } else {
+        // Otherwise, select the new skip
+        setSelectedSkip(skip);
+        setShowSummaryView(true);
+      }
       setIsLoading(false);
     }, 500);
   };
@@ -112,7 +110,7 @@ const SkipSelector: React.FC<SkipSelectorProps> = ({ setIsLoading }) => {
               <ArrowLeft size={20} className="mr-2" /> Back to Skips
             </button>
             <button
-              onClick={() => alert(`Proceeding to next step with ${selectedSkip.size}`)} 
+              onClick={() => navigate('/permit-check')} 
               className="w-full sm:w-auto px-8 py-3 rounded-lg font-semibold text-lg transition-all bg-amber-500 text-white hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-700 flex items-center justify-center shadow-md hover:shadow-lg"
             >
               Continue <ArrowRight size={20} className="ml-2" />
@@ -148,7 +146,7 @@ const SkipSelector: React.FC<SkipSelectorProps> = ({ setIsLoading }) => {
             <div className="flex flex-col sm:flex-row justify-between items-center max-w-7xl mx-auto gap-4">
               <button 
                 className="w-full sm:w-auto px-8 py-3 rounded-lg font-semibold text-lg transition-all bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-600 dark:text-gray-100 dark:hover:bg-gray-500 flex items-center justify-center"
-                onClick={() => window.history.back()} 
+                onClick={() => navigate('/waste-type')} 
               >
                 <ArrowLeft size={20} className="mr-2" /> Back
               </button>
@@ -170,9 +168,7 @@ const SkipSelector: React.FC<SkipSelectorProps> = ({ setIsLoading }) => {
                 disabled={selectedSkip === null}
                 onClick={() => {
                   if (selectedSkip) {
-                    // Placeholder for actual navigation or action
-                    console.log('Proceeding to next step with skip ID:', selectedSkip.id); 
-                    // Potentially: setShowSummaryView(true); // Or navigate to a different route/component
+                    navigate('/permit-check');
                   }
                 }}
               >

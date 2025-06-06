@@ -38,7 +38,7 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected, onSelect }) => {
       <div className="p-5">
         <div className="flex justify-between items-start mb-4">
           <div>
-            <h3 className="text-xl font-bold text-gray-800 dark:text-white">{skip.size}</h3>
+            <h3 className="text-xl font-bold text-gray-800 dark:text-white">{`${skip.size} Yard Skip`}</h3>
             <p className="text-gray-600 dark:text-gray-300">{skip.hire_period}</p>
           </div>
           
