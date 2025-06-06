@@ -30,10 +30,10 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep }) => {
                   className={`
                     w-10 h-10 rounded-full flex items-center justify-center transition-colors
                     ${isCompleted 
-                      ? 'bg-blue-600 text-white' 
+                      ? 'bg-amber-500 text-white dark:bg-amber-600 dark:text-white' 
                       : isCurrent 
-                        ? 'bg-blue-100 text-blue-600 border-2 border-blue-600' 
-                        : 'bg-gray-100 text-gray-400'}
+                        ? 'bg-amber-100 text-amber-600 border-2 border-amber-600 dark:bg-amber-700 dark:text-amber-300 dark:border-amber-500' 
+                        : 'bg-gray-100 text-gray-400 dark:bg-slate-700 dark:text-gray-500'}
                   `}
                 >
                   <StepIcon size={20} />
@@ -42,10 +42,10 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep }) => {
                   className={`
                     mt-2 text-sm font-medium
                     ${isCompleted 
-                      ? 'text-blue-600' 
+                      ? 'text-amber-600 dark:text-amber-400' 
                       : isCurrent 
-                        ? 'text-blue-600' 
-                        : 'text-gray-400'}
+                        ? 'text-amber-600 dark:text-amber-300' 
+                        : 'text-gray-400 dark:text-gray-500'}
                   `}
                 >
                   {step.name}
@@ -56,7 +56,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep }) => {
                 <div 
                   className={`
                     flex-1 h-1 mx-2
-                    ${index < currentStep ? 'bg-blue-600' : 'bg-gray-200'}
+                    ${index < currentStep ? 'bg-amber-500 dark:bg-amber-600' : 'bg-gray-200 dark:bg-slate-600'}
                   `}
                 />
               )}
