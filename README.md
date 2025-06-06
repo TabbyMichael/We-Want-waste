@@ -1,5 +1,15 @@
 # We Want Waste - Modern Skip Hire Platform
 
+## Live Demo
+
+You can view the deployed version of the redesigned page here:
+**[Netlify Deploy Link]** (e.g., `https://wewant-waste.netlify.app/`)
+
+## Sandbox Environment
+
+To inspect the code directly and see the development environment, you can access the CodeSandbox project here:
+**[CodeSandbox Link]** (e.g., `https://codesandbox.io/p/github/TabbyMichael/We-Want-waste/We-Want-Waste-1.0.0?workspaceId=ws_Cr4TCY2SKeQCsoHRxPGwhT`)
+
 ## Project Overview
 
 A comprehensive redesign and enhancement of the We Want Waste skip hire platform, featuring a modern, responsive interface with an intuitive multi-step booking flow. The application allows users to select their waste type, choose an appropriate skip size, and complete their booking with permit information.
