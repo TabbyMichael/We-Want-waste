@@ -11,20 +11,6 @@ function App() {
   // Basic loading state. You'll need to set this to true/false when operations start/end.
   const [isLoading, setIsLoading] = useState(false);
 
-  // EXAMPLE: To make the loader appear automatically during page navigations
-  // with React Router v6.4+, you would use the useNavigation hook:
-  // -------------------------------------------------------------------------
-  // const navigation = useNavigation();
-  // useEffect(() => {
-  //   if (navigation.state === 'loading' || navigation.state === 'submitting') {
-  //     setIsLoading(true);
-  //   } else {
-  //     setIsLoading(false);
-  //   }
-  // }, [navigation.state]);
-  // -------------------------------------------------------------------------
-  // Make sure react-router-dom is installed and your app is set up with BrowserRouter.
-
   return (
     <ThemeProvider>
       {isLoading && <Loader />}
